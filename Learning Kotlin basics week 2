@@ -1,0 +1,68 @@
+fun main() {
+
+    val warenNameListe: MutableList<String> = mutableListOf("Schokoriegel", "Wassereis", "Zeitungen")
+    val warenPreisListe: MutableList<Double> = mutableListOf(1.29, 0.49, 1.99)
+
+    println("Hallo Peter, aktuell kann ich dir folgendes anbieten:")
+    println("${warenNameListe[0]} zum Preis von je ${warenPreisListe[0]} €")
+    println("${warenNameListe[1]} zum Preis von je ${warenPreisListe[1]} €")
+    println("${warenNameListe[2]} zum Preis von je ${warenPreisListe[2]} €")
+
+    println("Welchen Preis möchtest du nochmal hören?")
+    val nichtVerstanden = readln()
+    var nichtVerstandenName = warenNameListe.indexOf(nichtVerstanden)
+    var nichtVerstandenPreis = warenPreisListe[nichtVerstandenName]
+    println("Das ${nichtVerstanden} kostet ${nichtVerstandenPreis}")
+
+    warenNameListe.add(0, "Kaugummi")
+    warenPreisListe.add(0, 0.19)
+
+    println("Welchen Preis möchtest du nochmal hören?")
+    val nichtVerstanden2 = readln()
+    var nichtVerstandenName2 = warenNameListe.indexOf(nichtVerstanden2)
+    var nichtVerstandenPreis2 = warenPreisListe[nichtVerstandenName2]
+    println("Das ${nichtVerstanden2} kostet ${nichtVerstandenPreis2}")
+
+    var danke = "Vielen Dank. Darf es noch etwas sein?"
+    var wieviel = "Wie viele möchtest du haben?"
+
+    println("Was möchtest du Kaufen?")
+    println("Bitte gib deine Wunschwaren ein :)")
+
+    val warenkorb1 = readln()
+    var warenkorbItem1 = warenNameListe.indexOf(warenkorb1)
+    var warenkorbPreis1 = warenPreisListe [warenkorbItem1]
+    println(wieviel)
+    var warenkorbmaenge1 = readln().toInt()
+    var summe1 = warenkorbPreis1 * warenkorbmaenge1
+    println(danke)
+
+    var warenkorb2 = readln()
+    var warenkorbItem2 = warenNameListe.indexOf(warenkorb2)
+    var warenkorbPreis2 = warenPreisListe [warenkorbItem2]
+    println(wieviel)
+    var warenkorbmaenge2 = readln().toInt()
+    var summe2 = warenkorbPreis2 * warenkorbmaenge2
+    println(danke)
+
+    var warenkorb3 = readln()
+    var warenkorbItem3 = warenNameListe.indexOf(warenkorb3)
+    var warenkorbPreis3 = warenPreisListe [warenkorbItem3]
+    println(wieviel)
+    var warenkorbmaenge3 = readln().toInt()
+    var summe3 = warenkorbPreis3 * warenkorbmaenge3
+    println(danke)
+
+    println("Du hast folgende Artikel im Warenkorb:")
+    println("$warenkorbmaenge1 $warenkorb1 für $summe1€, $warenkorbmaenge2 $warenkorb2 für $summe2€, $warenkorbmaenge3 $warenkorb3 für $summe3€")
+
+    println("Wieviel Geld hast du?")
+    val bargeld = readln()
+    var bargeldGesammt = bargeld.toDouble()
+
+    var wechselgeld = bargeldGesammt - (summe1 + summe2 + summe3)
+
+    println("Vielen Dank für den Einkauf du hast mir $bargeldGesammt € gegeben und bekommst $wechselgeld € zurückt")
+    println("Einen schönen Tag noch, bitte beehren Sie uns bald wieder.")
+
+}
